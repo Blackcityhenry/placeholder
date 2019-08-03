@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Special+Elite&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Nova+Mono&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Rock+Salt|Special+Elite&display=swap');
 html,body{
   margin: 0;
   font-family: 'Special Elite', cursive;
@@ -69,7 +67,7 @@ input:focus{
   left: 0;
   content: '';
   background-color: white;
-  opacity: 0.2;
+  opacity: 0.25;
   transition: .3s;
 }
 
@@ -78,15 +76,15 @@ input:focus{
 }
 
 .clipboard__grid:active:after{
-  opacity: 0.4;
+  opacity: 0.6;
 }
 
 .clipboard__grid:before{
   position: absolute;
-  color: rgba(0,0,0,0.55);
-  font-family: 'Nova Mono', monospace;
-  font-size: 10rem;
-  top: -5rem;
+  color: rgba(0,0,0,0.45);
+  font-family: 'Rock Salt', cursive;
+  font-size: 8rem;
+  top: -6.8rem;
   left: 10%;
 }
 

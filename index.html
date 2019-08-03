@@ -4,6 +4,7 @@
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
   <title>Placeholder Calculator</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" type="image/png" href="placeholder.png">
   <script src="clipboard.min.js" charset="utf-8"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
 </head>
@@ -16,15 +17,15 @@
       <input type="number" v-model="height" tabindex="0">
     </div>
     <div class="clipboard">
-      <a class="clipboard__grid clipboard-x1" data-clipboard-target=".clipboard-x1-hidden" tabindex="0">
+      <a href="#!" class="clipboard__grid clipboard-x1" data-clipboard-target=".clipboard-x1-hidden" tabindex="0">
         <span class="clipboard-x1-display">https://via.placeholder.com/{{ width * 1 || "" }}x{{ height * 1 || "" }}</span>
         <span class="clipboard-x1-hidden">https://via.placeholder.com/{{ width * 1 || "" }}x{{ height * 1 || "" }}</span>
       </a>
-      <a class="clipboard__grid clipboard-x2" data-clipboard-target=".clipboard-x2-hidden" tabindex="0">
+      <a href="#!" class="clipboard__grid clipboard-x2" data-clipboard-target=".clipboard-x2-hidden" tabindex="0">
         <span class="clipboard-x2-display">https://via.placeholder.com/{{ width * 2 || "" }}x{{ height * 2 || "" }}</span>
         <span class="clipboard-x2-hidden">https://via.placeholder.com/{{ width * 2 || "" }}x{{ height * 2 || "" }} x2</span>
       </a>
-      <a class="clipboard__grid clipboard-x3" data-clipboard-target=".clipboard-x3-hidden" tabindex="0">
+      <a href="#!" class="clipboard__grid clipboard-x3" data-clipboard-target=".clipboard-x3-hidden" tabindex="0">
         <span class="clipboard-x3-display">https://via.placeholder.com/{{ width * 3 || "" }}x{{ height * 3 || "" }}</span>
         <span class="clipboard-x3-hidden">https://via.placeholder.com/{{ width * 3 || "" }}x{{ height * 3 || "" }} x3</span>
       </a>
