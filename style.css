@@ -4,6 +4,14 @@ html,body{
   font-family: 'Special Elite', cursive;
 }
 
+::selection{
+  background-color: #4cd964;
+}
+
+::-moz-selection{
+  background-color: #4cd964;
+}
+
 input{
   border: 0;
   background-color: transparent;
