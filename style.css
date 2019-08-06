@@ -10,12 +10,14 @@ input{
   border-bottom: 4px solid transparent;
   -webkit-appearance: none;
   -moz-appearance: textfield;
+  font-family: 'Special Elite', cursive;
   margin: 0 10px;
   width: 1ch;
   color: white;
-  font-size: 3rem;
+  font-size: 1em;
   transition: .2s;
-  text-align: center
+  text-align: center;
+  margin-bottom: -10px;
 }
 
 input::-webkit-outer-spin-button,

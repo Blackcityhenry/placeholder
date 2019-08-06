@@ -12,9 +12,9 @@
   <div id="app">
     <div class="url">
       <span>https://via.placeholder.com/</span>
-      <input type="number" v-model="width" tabindex="0" onkeypress="this.style.width = (this.value.length + 1) + 'ch';">
+      <input type="number" v-model="width" tabindex="0" oninput="this.style.width = (this.value.length + 1) + 'ch';">
       <span>x</span>
-      <input type="number" v-model="height" tabindex="0" onkeypress="this.style.width = (this.value.length + 1) + 'ch';">
+      <input type="number" v-model="height" tabindex="0" oninput="this.style.width = (this.value.length + 1) + 'ch';">
     </div>
     <div class="clipboard">
       <a href="#!" class="clipboard__grid clipboard-x1" data-clipboard-target=".clipboard-x1-hidden" tabindex="0">
