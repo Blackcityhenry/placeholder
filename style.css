@@ -11,10 +11,10 @@ input{
   -webkit-appearance: none;
   -moz-appearance: textfield;
   margin: 0 10px;
-  width: 120px;
+  width: 1ch;
   color: white;
   font-size: 3rem;
-  transition: .5s;
+  transition: .2s;
   text-align: center
 }
 
