@@ -12,20 +12,20 @@
   <div id="app">
     <div class="url">
       <span>https://via.placeholder.com/</span>
-      <input type="number" v-model="width" tabindex="0" oninput="this.style.width = (this.value.length + 1) + 'ch';">
+      <input type="number" v-model="width" tabindex="0" oninput="this.style.width = this.value.length + 'ch';">
       <span>x</span>
-      <input type="number" v-model="height" tabindex="0" oninput="this.style.width = (this.value.length + 1) + 'ch';">
+      <input type="number" v-model="height" tabindex="0" oninput="this.style.width = this.value.length + 'ch';">
     </div>
     <div class="clipboard">
-      <a href="#!" class="clipboard__grid clipboard-x1" data-clipboard-target=".clipboard-x1-hidden" tabindex="0">
+      <a href="#!" class="clipboard__grid clipboard-x1" data-clipboard-target=".clipboard-x1-hidden" tabindex="0" onclick="event.preventDefault();">
         <span class="clipboard-x1-display">https://via.placeholder.com/{{ width * 1 || "" }}x{{ height * 1 || "" }}</span>
         <span class="clipboard-x1-hidden">https://via.placeholder.com/{{ width * 1 || "" }}x{{ height * 1 || "" }}</span>
       </a>
-      <a href="#!" class="clipboard__grid clipboard-x2" data-clipboard-target=".clipboard-x2-hidden" tabindex="0">
+      <a href="#!" class="clipboard__grid clipboard-x2" data-clipboard-target=".clipboard-x2-hidden" tabindex="0" onclick="event.preventDefault();">
         <span class="clipboard-x2-display">https://via.placeholder.com/{{ width * 2 || "" }}x{{ height * 2 || "" }}</span>
         <span class="clipboard-x2-hidden">https://via.placeholder.com/{{ width * 2 || "" }}x{{ height * 2 || "" }} x2</span>
       </a>
-      <a href="#!" class="clipboard__grid clipboard-x3" data-clipboard-target=".clipboard-x3-hidden" tabindex="0">
+      <a href="#!" class="clipboard__grid clipboard-x3" data-clipboard-target=".clipboard-x3-hidden" tabindex="0" onclick="event.preventDefault();">
         <span class="clipboard-x3-display">https://via.placeholder.com/{{ width * 3 || "" }}x{{ height * 3 || "" }}</span>
         <span class="clipboard-x3-hidden">https://via.placeholder.com/{{ width * 3 || "" }}x{{ height * 3 || "" }} x3</span>
       </a>
