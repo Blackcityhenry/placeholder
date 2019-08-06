@@ -96,31 +96,31 @@ input:focus{
   left: 10%;
 }
 
-.clipboard-x1{
+.clipboard-1x{
   background-color: #4cd964;
 }
 
-.clipboard-x1:before{
-  content: 'x1'
+.clipboard-1x:before{
+  content: '1x'
 }
 
-.clipboard-x2{
+.clipboard-2x{
   background-color: #54cfbb;
 }
 
-.clipboard-x2:before{
-  content: 'x2'
+.clipboard-2x:before{
+  content: '2x'
 }
 
-.clipboard-x3{
+.clipboard-3x{
   background-color: #5ac8fa;
 }
 
-.clipboard-x3:before{
-  content: 'x3'
+.clipboard-3x:before{
+  content: '3x'
 }
 
-.clipboard-x1-hidden, .clipboard-x2-hidden, .clipboard-x3-hidden{
+.clipboard-1x-hidden, .clipboard-2x-hidden, .clipboard-3x-hidden{
   position: absolute;
   font-size: 0;
 }
