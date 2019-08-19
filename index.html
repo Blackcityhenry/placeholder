@@ -11,6 +11,10 @@
 <body>
   <div id="app">
     <div class="url">
+      <div class="suffix">
+        <input type="checkbox" v-model="suffix" id="suffix-option">
+        <label for="suffix-option">suffix?</label>
+      </div>
       <span>https://<select v-model="url" onselect="this.style.width = this.value.length + 'ch';">
           <option>via.placeholder.com</option>
           <option>picsum.photos</option>
@@ -29,13 +33,13 @@
       </a>
       <a href="#!" class="clipboard__grid clipboard-2x" data-clipboard-target=".clipboard-2x-hidden" tabindex="0" onclick="event.preventDefault();">
         <span class="clipboard-2x-display">https://{{ url }}/{{ width * 2 || "" }}<span v-if="url=='via.placeholder.com'">x</span><span v-else>/</span>{{ height * 2 || "" }}</span>
-        <span v-if="url=='via.placeholder.com'" class="clipboard-2x-hidden">https://{{ url }}/{{ width * 2 || "" }}x{{ height * 2 || "" }} 2x</span>
-        <span v-else class="clipboard-2x-hidden">https://{{ url }}/{{ width * 2 || "" }}/{{ height * 2 || "" }} 2x</span>
+        <span v-if="url=='via.placeholder.com'" class="clipboard-2x-hidden">https://{{ url }}/{{ width * 2 || "" }}x{{ height * 2 || "" }} {{ suffix ? "2x" : "" }}</span>
+        <span v-else class="clipboard-2x-hidden">https://{{ url }}/{{ width * 2 || "" }}/{{ height * 2 || "" }} {{ suffix ? "2x" : "" }}</span>
       </a>
       <a href="#!" class="clipboard__grid clipboard-3x" data-clipboard-target=".clipboard-3x-hidden" tabindex="0" onclick="event.preventDefault();">
         <span class="clipboard-3x-display">https://{{ url }}/{{ width * 3 || "" }}<span v-if="url=='via.placeholder.com'">x</span><span v-else>/</span>{{ height * 3 || "" }}</span>
-        <span v-if="url=='via.placeholder.com'" class="clipboard-3x-hidden">https://{{ url }}/{{ width * 3 || "" }}x{{ height * 3 || "" }} 3x</span>
-        <span v-else class="clipboard-3x-hidden">https://{{ url }}/{{ width * 3 || "" }}/{{ height * 3 || "" }} 3x</span>
+        <span v-if="url=='via.placeholder.com'" class="clipboard-3x-hidden">https://{{ url }}/{{ width * 3 || "" }}x{{ height * 3 || "" }} {{ suffix ? "3x" : "" }}</span>
+        <span v-else class="clipboard-3x-hidden">https://{{ url }}/{{ width * 3 || "" }}/{{ height * 3 || "" }} {{ suffix ? "3x" : "" }}</span>
       </a>
     </div>
   </div>

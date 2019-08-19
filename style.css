@@ -12,7 +12,7 @@ html,body{
   background-color: #4cd964;
 }
 
-input{
+input[type="number"]{
   border: 0;
   background-color: transparent;
   border-bottom: 4px solid transparent;
@@ -70,6 +70,15 @@ input:focus{
   background-color: #000;
   color: white;
   font-size: 3rem;
+  position: relative;
+}
+
+.suffix{
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1.5rem;
+  padding: 1em 2em;
 }
 
 .clipboard{
@@ -114,6 +123,7 @@ input:focus{
   font-size: 8rem;
   top: -6.8rem;
   left: 10%;
+  letter-spacing: calc(9 / (8*16) * -1em);
 }
 
 .clipboard-1x{
