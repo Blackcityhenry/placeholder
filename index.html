@@ -21,25 +21,21 @@
           <option>placeimg.com</option>
         </select>/</span>
       <input type="number" v-model="width" tabindex="0" oninput="this.style.width = this.value.length + 'ch';">
-      <span v-if="url=='via.placeholder.com'">x</span>
-      <span v-else>/</span>
+      {{ url=='via.placeholder.com' ? 'x' : '/' }}
       <input type="number" v-model="height" tabindex="0" oninput="this.style.width = this.value.length + 'ch';">
     </div>
     <div class="clipboard">
       <a href="#!" class="clipboard__grid clipboard-1x" data-clipboard-target=".clipboard-1x-hidden" tabindex="0" onclick="event.preventDefault();">
         <span class="clipboard-1x-display">https://{{ url }}/{{ width * 1 || "" }}<span v-if="url=='via.placeholder.com'">x</span><span v-else>/</span>{{ height * 1 || "" }}</span>
-        <span v-if="url=='via.placeholder.com'" class="clipboard-1x-hidden">https://{{ url }}/{{ width * 1 || "" }}x{{ height * 1 || "" }}</span>
-        <span v-else class="clipboard-1x-hidden">https://{{ url }}/{{ width * 1 || "" }}/{{ height * 1 || "" }}</span>
+        <span class="clipboard-1x-hidden">https://{{ url }}/{{ width * 1 || "" }}{{ url=='via.placeholder.com' ? 'x' : '/' }}{{ height * 1 || "" }}</span>
       </a>
       <a href="#!" class="clipboard__grid clipboard-2x" data-clipboard-target=".clipboard-2x-hidden" tabindex="0" onclick="event.preventDefault();">
         <span class="clipboard-2x-display">https://{{ url }}/{{ width * 2 || "" }}<span v-if="url=='via.placeholder.com'">x</span><span v-else>/</span>{{ height * 2 || "" }}</span>
-        <span v-if="url=='via.placeholder.com'" class="clipboard-2x-hidden">https://{{ url }}/{{ width * 2 || "" }}x{{ height * 2 || "" }}{{ suffix ? " 2x" : "" }}</span>
-        <span v-else class="clipboard-2x-hidden">https://{{ url }}/{{ width * 2 || "" }}/{{ height * 2 || "" }}{{ suffix ? " 2x" : "" }}</span>
+        <span class="clipboard-2x-hidden">https://{{ url }}/{{ width * 2 || "" }}{{ url=='via.placeholder.com' ? 'x' : '/' }}{{ height * 2 || "" }}{{ suffix ? " 2x" : "" }}</span>
       </a>
       <a href="#!" class="clipboard__grid clipboard-3x" data-clipboard-target=".clipboard-3x-hidden" tabindex="0" onclick="event.preventDefault();">
         <span class="clipboard-3x-display">https://{{ url }}/{{ width * 3 || "" }}<span v-if="url=='via.placeholder.com'">x</span><span v-else>/</span>{{ height * 3 || "" }}</span>
-        <span v-if="url=='via.placeholder.com'" class="clipboard-3x-hidden">https://{{ url }}/{{ width * 3 || "" }}x{{ height * 3 || "" }}{{ suffix ? " 3x" : "" }}</span>
-        <span v-else class="clipboard-3x-hidden">https://{{ url }}/{{ width * 3 || "" }}/{{ height * 3 || "" }}{{ suffix ? " 3x" : "" }}</span>
+        <span class="clipboard-3x-hidden">https://{{ url }}/{{ width * 3 || "" }}{{ url=='via.placeholder.com' ? 'x' : '/' }}{{ height * 3 || "" }}{{ suffix ? " 3x" : "" }}</span>
       </a>
     </div>
   </div>
