@@ -25,17 +25,9 @@
       <input type="number" v-model="height" tabindex="0" oninput="this.style.width = this.value.length + 'ch';">
     </div>
     <div class="clipboard">
-      <a href="#!" class="clipboard__grid clipboard-1x" data-clipboard-target=".clipboard-1x-hidden" tabindex="0" onclick="event.preventDefault();">
-        <span class="clipboard-1x-display">https://{{ url }}/{{ width * 1 || "" }}<span v-if="url=='via.placeholder.com'">x</span><span v-else>/</span>{{ height * 1 || "" }}</span>
-        <span class="clipboard-1x-hidden">https://{{ url }}/{{ width * 1 || "" }}{{ url=='via.placeholder.com' ? 'x' : '/' }}{{ height * 1 || "" }}</span>
-      </a>
-      <a href="#!" class="clipboard__grid clipboard-2x" data-clipboard-target=".clipboard-2x-hidden" tabindex="0" onclick="event.preventDefault();">
-        <span class="clipboard-2x-display">https://{{ url }}/{{ width * 2 || "" }}<span v-if="url=='via.placeholder.com'">x</span><span v-else>/</span>{{ height * 2 || "" }}</span>
-        <span class="clipboard-2x-hidden">https://{{ url }}/{{ width * 2 || "" }}{{ url=='via.placeholder.com' ? 'x' : '/' }}{{ height * 2 || "" }}{{ suffix ? " 2x" : "" }}</span>
-      </a>
-      <a href="#!" class="clipboard__grid clipboard-3x" data-clipboard-target=".clipboard-3x-hidden" tabindex="0" onclick="event.preventDefault();">
-        <span class="clipboard-3x-display">https://{{ url }}/{{ width * 3 || "" }}<span v-if="url=='via.placeholder.com'">x</span><span v-else>/</span>{{ height * 3 || "" }}</span>
-        <span class="clipboard-3x-hidden">https://{{ url }}/{{ width * 3 || "" }}{{ url=='via.placeholder.com' ? 'x' : '/' }}{{ height * 3 || "" }}{{ suffix ? " 3x" : "" }}</span>
+      <a v-for="x in dpr" href="#!" class="clipboard__grid" :class="'clipboard-' + x + 'x'" :data-clipboard-target="'.clipboard-' + x + 'x-hidden'" tabindex="0" onclick="event.preventDefault();">
+        <span :class=" 'clipboard-' + x + 'x-display'">https://{{ url }}/{{ width * x || "" }}{{ url=='via.placeholder.com' ? 'x' : '/' }}{{ height * x || "" }}</span>
+        <span :class=" 'clipboard-' + x + 'x-hidden'">https://{{ url }}/{{ width * x || "" }}{{ url=='via.placeholder.com' ? 'x' : '/' }}{{ height * x || "" }}{{ suffix ? (x == 1 ? "" : " " + x + "x") : ""}}</span>
       </a>
     </div>
   </div>
