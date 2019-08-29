@@ -117,6 +117,7 @@ input:focus{
 }
 
 .clipboard__grid:before{
+  content: attr(i)"x";
   position: absolute;
   color: rgba(0,0,0,0.45);
   font-family: 'Rock Salt', cursive;
@@ -130,27 +131,15 @@ input:focus{
   background-color: #4cd964;
 }
 
-.clipboard-1x:before{
-  content: '1x'
-}
-
 .clipboard-2x{
   background-color: #54cfbb;
-}
-
-.clipboard-2x:before{
-  content: '2x'
 }
 
 .clipboard-3x{
   background-color: #5ac8fa;
 }
 
-.clipboard-3x:before{
-  content: '3x'
-}
-
-.clipboard-1x-hidden, .clipboard-2x-hidden, .clipboard-3x-hidden{
+.clipboard-hidden{
   position: absolute;
   font-size: 0;
 }
