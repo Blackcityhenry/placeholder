@@ -6,7 +6,8 @@ var ph = new Vue(
       dpr: 3,
       url: 'via.placeholder.com',
       width: null,
-      height: null
+      height: null,
+      checkurl: null
     }
   }
 )

@@ -11,6 +11,7 @@
 <body>
   <div id="app">
     <div class="url">
+      <div hidden>{{ checkurl = url=='via.placeholder.com' ? true : false }}</div>
       <div class="suffix">
         <input type="checkbox" v-model="suffix" id="suffix-option">
         <label for="suffix-option">suffix?</label>
@@ -21,13 +22,13 @@
           <option>placeimg.com</option>
         </select>/</span>
       <input type="number" v-model="width" tabindex="0" oninput="this.style.width = this.value.length + 'ch';">
-      {{ url=='via.placeholder.com' ? 'x' : '/' }}
+      {{ checkurl ? 'x' : '/' }}
       <input type="number" v-model="height" tabindex="0" oninput="this.style.width = this.value.length + 'ch';">
     </div>
     <div class="clipboard">
       <a v-for="x in dpr" href="#!" class="clipboard__grid" :class="'clipboard-' + x + 'x'" :data-clipboard-target="'.clipboard-' + x + 'x-hidden'" :i="x" tabindex="0" onclick="event.preventDefault();">
-        <span :class=" 'clipboard-' + x + 'x-display'">https://{{ url }}/{{ width * x || "" }}{{ url=='via.placeholder.com' ? 'x' : '/' }}{{ height * x || "" }}</span>
-        <span :class=" 'clipboard-' + x + 'x-hidden'" class="clipboard-hidden">https://{{ url }}/{{ width * x || "" }}{{ url=='via.placeholder.com' ? 'x' : '/' }}{{ height * x || "" }}{{ suffix ? (x == 1 ? "" : " " + x + "x") : ""}}</span>
+        <span :class=" 'clipboard-' + x + 'x-display'">https://{{ url }}/{{ width * x || "" }}{{ checkurl ? 'x' : '/' }}{{ height * x || "" }}</span>
+        <span :class=" 'clipboard-' + x + 'x-hidden'" class="clipboard-hidden">https://{{ url }}/{{ width * x || "" }}{{ checkurl ? 'x' : '/' }}{{ height * x || "" }}{{ suffix ? (x == 1 ? "" : " " + x + "x") : ""}}</span>
       </a>
     </div>
   </div>

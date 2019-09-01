@@ -4,6 +4,10 @@ html,body{
   font-family: 'Special Elite', cursive;
 }
 
+[v-cloak]{
+  display: none;
+}
+
 ::selection{
   background-color: #4cd964;
 }
