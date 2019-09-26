@@ -11,7 +11,6 @@
 <body>
   <div id="app">
     <div class="url">
-      <div hidden>{{ isx = url=='via.placeholder.com' ? 'x' : '/' }}</div>
       <div class="suffix">
         <input type="checkbox" v-model="suffix" id="suffix-option">
         <label for="suffix-option">suffix?</label>
@@ -20,15 +19,16 @@
           <option>via.placeholder.com</option>
           <option>picsum.photos</option>
           <option>placeimg.com</option>
+          <option>image-p17.dev.theorigo.com</option>
         </select>/</span>
       <input type="number" v-model="width" tabindex="0" oninput="this.style.width = this.value.length + 'ch';">
-      {{ isx }}
+      {{ junction }}
       <input type="number" v-model="height" tabindex="0" oninput="this.style.width = this.value.length + 'ch';">
     </div>
     <div class="clipboard">
-      <a v-for="x in dpr" href="#!" class="clipboard__grid" :class="'clipboard-' + x + 'x'" :data-clipboard-target="'.clipboard-' + x + 'x-hidden'" :i="x" tabindex="0" onclick="event.preventDefault();">
-        <span :class=" 'clipboard-' + x + 'x-display'">https://{{ url }}/{{ width * x || "" }}{{ isx }}{{ height * x || "" }}</span>
-        <span :class=" 'clipboard-' + x + 'x-hidden'" class="clipboard-hidden">https://{{ url }}/{{ width * x || "" }}{{ isx }}{{ height * x || "" }}{{ suffix ? (x == 1 ? "" : " " + x + "x") : ""}}</span>
+      <a v-for="i in dpr" href="#!" class="clipboard__grid" :class="'clipboard-' + i + 'x'" :data-clipboard-target="'.clipboard-' + i + 'x-hidden'" :i="i" tabindex="0" onclick="event.preventDefault();">
+        <span :class=" 'clipboard-' + i + 'x-display'">{{ display(i) }}</span>
+        <span :class=" 'clipboard-' + i + 'x-hidden'" class="clipboard-hidden">{{ hidden(i) }}</span>
       </a>
     </div>
   </div>
