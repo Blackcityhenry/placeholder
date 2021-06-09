@@ -2,7 +2,8 @@ var ph = new Vue(
   {
     el: '#app',
     data: {
-      suffix: true,
+      cdn: true,
+      suffix: false,
       dpr: 3,
       url: 'via.placeholder.com',
       width: null,
@@ -27,7 +28,11 @@ var ph = new Vue(
         return 'https://' + this.url + '/' + (this.width * i || "") + this.junction + (this.height * i || "" )
       },
       hidden: function(i) {
-        return this.display(i) + (this.suffix ? (i == 1 ? "" : " " + i + "x") : "")
+        if ( this.cdn ){
+          return 'https://cdn.statically.io/img/' + this.display(i).replace('https://', '') + (this.suffix ? (i == 1 ? "" : " " + i + "x") : "")          
+        } else {
+          return this.display(i) + (this.suffix ? (i == 1 ? "" : " " + i + "x") : "")
+        }
       }
     }
   }

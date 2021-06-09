@@ -11,9 +11,14 @@
 <body>
   <div id="app">
     <div class="url">
-      <div class="suffix">
-        <input type="checkbox" v-model="suffix" id="suffix-option">
-        <label for="suffix-option">suffix?</label>
+      <div class="options">
+        <label for="cdn-option">cdn?
+          <input type="checkbox" v-model="cdn" id="cdn-option">
+        </label>
+
+        <label for="suffix-option">suffix? (2x / 3x)
+          <input type="checkbox" v-model="suffix" id="suffix-option">
+        </label>
       </div>
       <span>https://<select v-model="url" onselect="this.style.width = this.value.length + 'ch';">
           <option>via.placeholder.com</option>
